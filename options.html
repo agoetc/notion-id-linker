@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Settings</title>
+  <style>
+    body {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      padding: 8px 15px;
+      background: #0366d6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0255b3;
+    }
+    .status {
+      margin-top: 10px;
+      color: green;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>GitHub to Notion Link Settings</h1>
+    <div class="form-group">
+      <label for="prefix">Project Prefix (e.g., "PROJ"):</label>
+      <input type="text" id="prefix" placeholder="Enter project prefix">
+    </div>
+    <button id="save">Save</button>
+    <div id="status" class="status">Settings saved!</div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub to Notion Link Converter",
+  "version": "1.0",
+  "description": "Converts GitHub issue references to Notion links",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "options_page": "options.html"
+}
