@@ -1,4 +1,4 @@
-# GitHub to Notion Link Converter
+# Notion Id Linker
 
 This Chrome extension automatically converts GitHub issue references (e.g., AAA-123, BBB-456) to clickable Notion.so links.
 

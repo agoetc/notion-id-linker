@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "GitHub to Notion Link Converter",
+  "name": "Notion Id Linker",
   "version": "1.0",
-  "description": "Converts GitHub issue references to Notion links",
+  "description": "Convert Notion's unique IDs to Notion links",
   "permissions": ["storage"],
   "content_scripts": [
     {
