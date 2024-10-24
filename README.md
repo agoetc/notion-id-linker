@@ -1,10 +1,10 @@
 # GitHub to Notion Link Converter
 
-This Chrome extension automatically converts GitHub issue references (e.g., PROJ-123) to clickable Notion.so links.
+This Chrome extension automatically converts GitHub issue references (e.g., AAA-123, BBB-456) to clickable Notion.so links.
 
 ## Features
 
-- Configurable project prefix
+- Support for multiple project IDs
 - Automatic conversion of references to Notion links
 - Works on any GitHub page
 - Real-time conversion of dynamically loaded content
@@ -18,10 +18,10 @@ This Chrome extension automatically converts GitHub issue references (e.g., PROJ
 
 ## Configuration
 
-1. Click the extension options
-2. Enter your project prefix (e.g., "PROJ")
+1. Click the extension icon in the toolbar
+2. Add your project IDs (e.g., "AAA", "BBB", "PROJ")
 3. Click Save
 
 ## Usage
 
-After installation and configuration, any matching pattern (e.g., PROJ-123) on GitHub pages will automatically be converted to a clickable link pointing to notion.so/PROJ-123.
+After installation and configuration, any matching patterns (e.g., AAA-123, BBB-456) on GitHub pages will automatically be converted to clickable links pointing to notion.so/AAA-123 or notion.so/BBB-456.

@@ -1,12 +1,13 @@
 // Notion リンク変換のメイン関数
 function convertToNotionLinks(node) {
   // ストレージから設定済みのプレフィックスを取得
-  chrome.storage.sync.get(['prefix'], (result) => {
-    const prefix = result.prefix || '';
-    if (!prefix) return;
+  chrome.storage.sync.get(['prefixes'], (result) => {
+    const prefixes = result.prefixes || [];
+    if (prefixes.length === 0) return;
 
-    // プレフィックスと数字のパターンを作成（例：PROJ-123）
-    const pattern = new RegExp(`(${prefix}-\\d+)`, 'g');
+    // すべてのプレフィックスを含むパターンを作成（例：(AAA|BBB|PROJ)-\d+）
+    const prefixPattern = prefixes.map(p => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+    const pattern = new RegExp(`((?:${prefixPattern})-\\d+)`, 'g');
 
     // DOM内のテキストノードを走査するためのTreeWalkerを作成
     const walker = document.createTreeWalker(

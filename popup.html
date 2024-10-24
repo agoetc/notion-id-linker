@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Settings</title>
+  <style>
+    body {
+      width: 350px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .prefix-list {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+    }
+    .prefix-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 8px;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .remove-btn {
+      padding: 8px;
+      background: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .remove-btn:hover {
+      background: #c82333;
+    }
+    .add-btn {
+      width: 100%;
+      padding: 8px 15px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+    .add-btn:hover {
+      background: #218838;
+    }
+    .save-btn {
+      width: 100%;
+      padding: 8px 15px;
+      background: #0366d6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .save-btn:hover {
+      background: #0255b3;
+    }
+    .status {
+      margin-top: 10px;
+      color: green;
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Notion Id Linker</h2>
+    <div class="prefix-list" id="prefixList">
+      <!-- Prefix items will be added here dynamically -->
+    </div>
+    <button class="add-btn" id="addPrefix">Add</button>
+    <button class="save-btn" id="save">Save</button>
+    <div id="status" class="status">Settings saved!</div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
