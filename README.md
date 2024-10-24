@@ -14,7 +14,7 @@ This Chrome extension automatically converts GitHub issue references (e.g., AAA-
 1. Open Chrome Extensions (chrome://extensions/)
 2. Enable "Developer mode"
 3. Click "Load unpacked"
-4. Select this extension directory
+4. Select this app directory
 
 ## Configuration
 
