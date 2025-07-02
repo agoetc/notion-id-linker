@@ -5,9 +5,9 @@ function convertToNotionLinks(node) {
     const prefixes = result.prefixes || [];
     if (prefixes.length === 0) return;
 
-    // すべてのプレフィックスを含むパターンを作成（例：(AAA|BBB|PROJ)-\d+）
+    // すべてのプレフィックスを含むパターンを作成（例：(AAA|BBB|PROJ)-\d+、AAA-SUB-\d+）
     const prefixPattern = prefixes.map(p => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
-    const pattern = new RegExp(`((?:${prefixPattern})-\\d+)`, 'g');
+    const pattern = new RegExp(`((?:${prefixPattern})(?:-SUB)?-\\d+)`, 'g');
 
     // DOM内のテキストノードを走査するためのTreeWalkerを作成
     const walker = document.createTreeWalker(
