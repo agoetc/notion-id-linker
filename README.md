@@ -92,6 +92,13 @@ cd notion-id-linker
 - **ポップアップ**: 拡張機能アイコンを右クリック → 「ポップアップを検証」
 - **拡張機能の更新**: `chrome://extensions/`でリロードボタンをクリック
 
+### リリース用zipファイル作成
+
+```bash
+# appディレクトリをzipファイルにパッケージ化
+zip -r notion-id-linker.zip app/
+```
+
 ### コード構造の注意点
 
 - `popup.js`は`prefixes`配列を使用（現在のメイン実装）
