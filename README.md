@@ -1,5 +1,8 @@
 # Notion ID Linker
 
+chrome拡張のstoreリンク
+https://chromewebstore.google.com/detail/notion-id-linker/bnfabljablpgomcopdaiecaoibbndbep?authuser=0&hl=ja
+
 **Chrome拡張機能：GitHubページでプロジェクトIDを自動的にNotion.soリンクに変換**
 
 GitHubのイシューやプルリクエストで使用されるプロジェクトID（例：`PROJ-123`、`TASK-456`）を自動的にクリック可能なNotion.soリンクに変換するChrome拡張機能です。動的に読み込まれるコンテンツにもリアルタイムで対応します。
@@ -98,12 +101,6 @@ cd notion-id-linker
 # appディレクトリをzipファイルにパッケージ化
 zip -r notion-id-linker.zip app/
 ```
-
-### コード構造の注意点
-
-- `popup.js`は`prefixes`配列を使用（現在のメイン実装）
-- `options.js`は単一の`prefix`文字列を使用（レガシーコード）
-- コメントは日本語で記述
 
 ## 📝 ライセンス
 
