@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Notion Id Linker",
+  "name": "Notion Id Linker for GitHub",
   "version": "1.1",
   "description": "Convert Notion's unique IDs to Notion links",
   "permissions": ["storage"],
