@@ -30,6 +30,23 @@
       padding: 8px;
       box-sizing: border-box;
     }
+    .type-select {
+      padding: 8px 4px;
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+    .backlog-host-group {
+      margin-bottom: 15px;
+    }
+    .backlog-host-group label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+      color: #333;
+    }
+    .backlog-host-group input[type="text"] {
+      width: 100%;
+    }
     .remove-btn {
       padding: 8px;
       background: #dc3545;
@@ -81,6 +98,10 @@
       <!-- Prefix items will be added here dynamically -->
     </div>
     <button class="add-btn" id="addPrefix">Add</button>
+    <div class="backlog-host-group">
+      <label for="backlogHost">Backlog host (for Backlog prefixes)</label>
+      <input type="text" id="backlogHost" placeholder="e.g., your-space.backlog.com">
+    </div>
     <button class="save-btn" id="save">Save</button>
     <div id="status" class="status">Settings saved!</div>
   </div>
