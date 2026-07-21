@@ -1,0 +1,41 @@
+name: Release
+
+# v* タグ（例: v1.2）を push すると、app/ を zip 化して GitHub Release を作成する。
+# 使い方: manifest.json の version を上げてコミット → git tag v1.2 → git push origin main --tags
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # タグ名（vを除いた値）と manifest.json の version が一致するか検証
+      # 不一致のまま公開すると Chrome Web Store がバージョン増を認識できず更新に失敗するため
+      - name: Verify manifest version matches tag
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          manifest="$(jq -r '.version' app/manifest.json)"
+          echo "tag=$tag manifest=$manifest"
+          if [ "$tag" != "$manifest" ]; then
+            echo "::error::タグ ($tag) と manifest.json の version ($manifest) が一致しません。manifest を bump してから再タグしてください。"
+            exit 1
+          fi
+
+      # app/ 直下を zip 化（manifest.json が zip ルートに来るようにする）
+      - name: Build extension zip
+        run: |
+          cd app
+          zip -r "../notion-id-linker-${GITHUB_REF_NAME}.zip" . -x '*.DS_Store'
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: notion-id-linker-*.zip
+          generate_release_notes: true
